@@ -17,17 +17,30 @@
 					{
 						"indexed": false,
 						"internalType": "string[]",
-						"name": "",
+						"name": "options",
 						"type": "string[]"
 					},
 					{
 						"indexed": false,
 						"internalType": "uint256",
-						"name": "endTime",
+						"name": "duration",
 						"type": "uint256"
 					}
 				],
 				"name": "PollCreated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "bytes",
+						"name": "",
+						"type": "bytes"
+					}
+				],
+				"name": "Voted",
 				"type": "event"
 			},
 			{
@@ -38,27 +51,22 @@
 						"type": "string"
 					},
 					{
-						"internalType": "uint32",
-						"name": "_startTime",
-						"type": "uint32"
-					},
-					{
-						"internalType": "uint32",
-						"name": "_endTime",
-						"type": "uint32"
-					},
-					{
 						"internalType": "string[]",
 						"name": "_options",
 						"type": "string[]"
+					},
+					{
+						"internalType": "uint32",
+						"name": "_duration",
+						"type": "uint32"
 					}
 				],
 				"name": "createPoll",
 				"outputs": [
 					{
-						"internalType": "uint64",
+						"internalType": "uint256",
 						"name": "",
-						"type": "uint64"
+						"type": "uint256"
 					}
 				],
 				"stateMutability": "nonpayable",
@@ -72,56 +80,17 @@
 						"type": "uint256"
 					}
 				],
-				"name": "getActivePolls",
+				"name": "getResults",
 				"outputs": [
 					{
-						"internalType": "string",
+						"internalType": "string[]",
 						"name": "",
-						"type": "string"
+						"type": "string[]"
 					},
 					{
-						"internalType": "uint32",
+						"internalType": "uint256[]",
 						"name": "",
-						"type": "uint32"
-					},
-					{
-						"internalType": "uint32",
-						"name": "",
-						"type": "uint32"
-					},
-					{
-						"internalType": "uint64",
-						"name": "",
-						"type": "uint64"
-					},
-					{
-						"internalType": "address",
-						"name": "",
-						"type": "address"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "_pollId",
-						"type": "uint256"
-					},
-					{
-						"internalType": "string",
-						"name": "_option",
-						"type": "string"
-					}
-				],
-				"name": "getVoteCount",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
+						"type": "uint256[]"
 					}
 				],
 				"stateMutability": "view",
@@ -147,13 +116,28 @@
 			}
 		],
 		"devdoc": {
+			"author": "Navin Rajmohan",
+			"custom:experimental": "This is an experimental contract.",
+			"details": "All function calls are currently implemented without side effects",
 			"kind": "dev",
-			"methods": {},
+			"methods": {
+				"createPoll(string,string[],uint32)": {
+					"details": "A function to create the poll in DApp"
+				},
+				"getResults(uint256)": {
+					"details": "A function to retrieve the votes"
+				},
+				"vote(uint256,string)": {
+					"details": "A fucntion to make the vote"
+				}
+			},
+			"title": "A contract for managing polls",
 			"version": 1
 		},
 		"userdoc": {
 			"kind": "user",
 			"methods": {},
+			"notice": "You can use this contract for only the most basic voting",
 			"version": 1
 		}
 	},
@@ -174,11 +158,11 @@
 	},
 	"sources": {
 		"VotingTheory/polls.sol": {
-			"keccak256": "0xa7b4bae018206ed5182b362f8df80b4f0e9afcdc159f1144f3dc8590346feb21",
+			"keccak256": "0xe1fab8de207e80c449a66e63b60ac6e17f4c7c7e6e57e8acc5a2f26f3b7c9ded",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://8069f8da1253224c253bd4e58eb29e4fc6a104c0ccc95aa98361bc3191db15dd",
-				"dweb:/ipfs/QmY4eFfBUrah6bhXQpNMAErTYwRp7dvk6oScHg5Z9eb436"
+				"bzz-raw://3dfa0c8dc0834c4f25acb46afdec065235d97c4ab8c65cbb84cd4912dc0204ce",
+				"dweb:/ipfs/QmYCQ5d4UpMuQnRh4tfjjguMtTF3pNnBzm37e9YjZpXjxL"
 			]
 		}
 	},
