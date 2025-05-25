@@ -1,0 +1,186 @@
+{
+	"compiler": {
+		"version": "0.8.26+commit.8a97fa7a"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "title",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "string[]",
+						"name": "",
+						"type": "string[]"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "endTime",
+						"type": "uint256"
+					}
+				],
+				"name": "PollCreated",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_title",
+						"type": "string"
+					},
+					{
+						"internalType": "uint32",
+						"name": "_startTime",
+						"type": "uint32"
+					},
+					{
+						"internalType": "uint32",
+						"name": "_endTime",
+						"type": "uint32"
+					},
+					{
+						"internalType": "string[]",
+						"name": "_options",
+						"type": "string[]"
+					}
+				],
+				"name": "createPoll",
+				"outputs": [
+					{
+						"internalType": "uint64",
+						"name": "",
+						"type": "uint64"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_pollId",
+						"type": "uint256"
+					}
+				],
+				"name": "getActivePolls",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					},
+					{
+						"internalType": "uint32",
+						"name": "",
+						"type": "uint32"
+					},
+					{
+						"internalType": "uint32",
+						"name": "",
+						"type": "uint32"
+					},
+					{
+						"internalType": "uint64",
+						"name": "",
+						"type": "uint64"
+					},
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_pollId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "_option",
+						"type": "string"
+					}
+				],
+				"name": "getVoteCount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_pollId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "_option",
+						"type": "string"
+					}
+				],
+				"name": "vote",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"VotingTheory/polls.sol": "Polls"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"VotingTheory/polls.sol": {
+			"keccak256": "0xa7b4bae018206ed5182b362f8df80b4f0e9afcdc159f1144f3dc8590346feb21",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://8069f8da1253224c253bd4e58eb29e4fc6a104c0ccc95aa98361bc3191db15dd",
+				"dweb:/ipfs/QmY4eFfBUrah6bhXQpNMAErTYwRp7dvk6oScHg5Z9eb436"
+			]
+		}
+	},
+	"version": 1
+}

@@ -1,0 +1,45 @@
+{
+	"compiler": {
+		"version": "0.8.26+commit.8a97fa7a"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"VotingTheory/voting.sol": "Voting"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"VotingTheory/voting.sol": {
+			"keccak256": "0xd3e635f5faf6b7604d2d850dcee0183302ac999d41c1b83aa18242aa2b70ff9c",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://e86da9a69fa3a322c1c77be50bc6d5cfe2bfd61b52f5fcff8532e388125896da",
+				"dweb:/ipfs/QmR5C4Q4CGx5nv3g8gKoYtiaarJADGBSS1qfw6wsbB5MWD"
+			]
+		}
+	},
+	"version": 1
+}
