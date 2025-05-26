@@ -17,8 +17,15 @@ contract Polls {
         mapping (address => bool) voted;    // Address : Voted?
     }
 
+    struct ActivePolls {
+        string title;
+        string[] options;
+        uint32 endTime;
+        uint256 pollId;
+    }
+
     // Struct-array to store the polls created
-    Poll[] private polls;
+    Poll[] public polls;
     // Poll[] private activePolls;
 
     event PollCreated(string title, string[] options, uint256 duration);
@@ -31,7 +38,7 @@ contract Polls {
     }
 
     /// @dev A function to create the poll in DApp
-    function createPoll(string memory _title, string[] memory _options, uint32 _duration) public returns (uint256) {
+    function createPoll(string memory _title, string[] memory _options, uint32 _duration) external returns (uint256) {
         require (_options.length > 0, "No options provided");
         polls.push();
         uint256 pollId = polls.length - 1;
@@ -45,7 +52,7 @@ contract Polls {
     }
 
     /// @dev A fucntion to make the vote
-    function vote(uint256 _pollId, string memory _option) public onlyActive(_pollId) {
+    function vote(uint256 _pollId, string memory _option) external onlyActive(_pollId) {
         require (_pollId <= polls.length, "Invalid Poll ID");   // this line is not reflecting in log or as error yet instead smth abt payable error
         Poll storage poll = polls[_pollId];
         require (!poll.voted[msg.sender], "Already voted");
@@ -56,7 +63,7 @@ contract Polls {
     }
 
     /// @dev Afunction to validate the proposed voting option
-    function isValidOption(string[] memory _options, string memory _option) private pure returns (bool) {
+    function isValidOption(string[] memory _options, string memory _option) internal pure returns (bool) {
         bytes32 optionHash = keccak256(bytes(_option));
         for(uint i = 0; i < _options.length; i++) {
             if(keccak256(bytes(_options[i])) == optionHash) {
@@ -74,5 +81,29 @@ contract Polls {
             counts[i] = poll.votes[poll.options[i]];
         }
         return (poll.options, counts);
+    }
+
+    // @dev A function to retrieve the active polls
+    function getActivePolls() external view returns (ActivePolls[] memory) {
+        uint256 activeCount = 0;
+        for (uint i = 0; i < polls.length; i++) {
+            if (polls[i].endTime >= block.timestamp) {
+                activeCount++;
+            }
+        }
+        ActivePolls[] memory actPoll = new ActivePolls[](activeCount);
+        uint256 index = 0;
+        for(uint i = 0; i < polls.length; i++) {
+            if (polls[i].endTime >= block.timestamp) {
+                actPoll[index] = ActivePolls({
+                    pollId: i,
+                    title: polls[i].title,
+                    endTime: polls[i].endTime,
+                    options: polls[i].options
+                });
+                index++;
+            }
+        }
+        return actPoll;
     }
 }

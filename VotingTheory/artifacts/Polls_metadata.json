@@ -73,6 +73,41 @@
 				"type": "function"
 			},
 			{
+				"inputs": [],
+				"name": "getActivePolls",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "title",
+								"type": "string"
+							},
+							{
+								"internalType": "string[]",
+								"name": "options",
+								"type": "string[]"
+							},
+							{
+								"internalType": "uint32",
+								"name": "endTime",
+								"type": "uint32"
+							},
+							{
+								"internalType": "uint256",
+								"name": "pollId",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct Polls.ActivePolls[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"inputs": [
 					{
 						"internalType": "uint256",
@@ -91,6 +126,30 @@
 						"internalType": "uint256[]",
 						"name": "",
 						"type": "uint256[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "polls",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "title",
+						"type": "string"
+					},
+					{
+						"internalType": "uint32",
+						"name": "endTime",
+						"type": "uint32"
 					}
 				],
 				"stateMutability": "view",
@@ -158,11 +217,11 @@
 	},
 	"sources": {
 		"VotingTheory/polls.sol": {
-			"keccak256": "0xe1fab8de207e80c449a66e63b60ac6e17f4c7c7e6e57e8acc5a2f26f3b7c9ded",
+			"keccak256": "0xf8a84dd9c7edbe0fde15e92170177c4108853e1b3aaafad27a4d1ad693ad4bb3",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://3dfa0c8dc0834c4f25acb46afdec065235d97c4ab8c65cbb84cd4912dc0204ce",
-				"dweb:/ipfs/QmYCQ5d4UpMuQnRh4tfjjguMtTF3pNnBzm37e9YjZpXjxL"
+				"bzz-raw://934b8485596050b4993e1d82e711b29df49a658d3ca2f70d241e1e60aaff66eb",
+				"dweb:/ipfs/QmYZrRy8sNY3JndTjoRxDfuMU1yaZCiPqpKDyNiJS7u6uS"
 			]
 		}
 	},
