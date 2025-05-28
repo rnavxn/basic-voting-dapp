@@ -16,9 +16,9 @@
 					},
 					{
 						"indexed": false,
-						"internalType": "string[]",
+						"internalType": "bytes32[]",
 						"name": "options",
-						"type": "string[]"
+						"type": "bytes32[]"
 					},
 					{
 						"indexed": false,
@@ -35,9 +35,15 @@
 				"inputs": [
 					{
 						"indexed": false,
-						"internalType": "bytes",
-						"name": "",
-						"type": "bytes"
+						"internalType": "address",
+						"name": "voter",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "pollId",
+						"type": "uint256"
 					}
 				],
 				"name": "Voted",
@@ -51,9 +57,9 @@
 						"type": "string"
 					},
 					{
-						"internalType": "string[]",
+						"internalType": "bytes32[]",
 						"name": "_options",
-						"type": "string[]"
+						"type": "bytes32[]"
 					},
 					{
 						"internalType": "uint32",
@@ -73,35 +79,29 @@
 				"type": "function"
 			},
 			{
-				"inputs": [],
-				"name": "getActivePolls",
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_pollId",
+						"type": "uint256"
+					}
+				],
+				"name": "getPoll",
 				"outputs": [
 					{
-						"components": [
-							{
-								"internalType": "string",
-								"name": "title",
-								"type": "string"
-							},
-							{
-								"internalType": "string[]",
-								"name": "options",
-								"type": "string[]"
-							},
-							{
-								"internalType": "uint32",
-								"name": "endTime",
-								"type": "uint32"
-							},
-							{
-								"internalType": "uint256",
-								"name": "pollId",
-								"type": "uint256"
-							}
-						],
-						"internalType": "struct Polls.ActivePolls[]",
+						"internalType": "string",
 						"name": "",
-						"type": "tuple[]"
+						"type": "string"
+					},
+					{
+						"internalType": "bytes32[]",
+						"name": "",
+						"type": "bytes32[]"
+					},
+					{
+						"internalType": "uint32",
+						"name": "",
+						"type": "uint32"
 					}
 				],
 				"stateMutability": "view",
@@ -118,14 +118,32 @@
 				"name": "getResults",
 				"outputs": [
 					{
-						"internalType": "string[]",
+						"internalType": "bytes32[]",
 						"name": "",
-						"type": "string[]"
+						"type": "bytes32[]"
 					},
 					{
 						"internalType": "uint256[]",
 						"name": "",
 						"type": "uint256[]"
+					},
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getTotalPolls",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
 					}
 				],
 				"stateMutability": "view",
@@ -163,9 +181,9 @@
 						"type": "uint256"
 					},
 					{
-						"internalType": "string",
+						"internalType": "bytes32",
 						"name": "_option",
-						"type": "string"
+						"type": "bytes32"
 					}
 				],
 				"name": "vote",
@@ -180,13 +198,19 @@
 			"details": "All function calls are currently implemented without side effects",
 			"kind": "dev",
 			"methods": {
-				"createPoll(string,string[],uint32)": {
+				"createPoll(string,bytes32[],uint32)": {
 					"details": "A function to create the poll in DApp"
+				},
+				"getPoll(uint256)": {
+					"details": "Afunction to get poll details"
 				},
 				"getResults(uint256)": {
 					"details": "A function to retrieve the votes"
 				},
-				"vote(uint256,string)": {
+				"getTotalPolls()": {
+					"details": "A function to get totla polls"
+				},
+				"vote(uint256,bytes32)": {
 					"details": "A fucntion to make the vote"
 				}
 			},
@@ -217,11 +241,11 @@
 	},
 	"sources": {
 		"VotingTheory/polls.sol": {
-			"keccak256": "0xf8a84dd9c7edbe0fde15e92170177c4108853e1b3aaafad27a4d1ad693ad4bb3",
+			"keccak256": "0x5dee6f69ee6df69b48639474039ba9362a33b5df9c554b5a97554951a99eec25",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://934b8485596050b4993e1d82e711b29df49a658d3ca2f70d241e1e60aaff66eb",
-				"dweb:/ipfs/QmYZrRy8sNY3JndTjoRxDfuMU1yaZCiPqpKDyNiJS7u6uS"
+				"bzz-raw://7eb1f8a544750b7eae624dea633797b57ccfd39bca565cc06566284782782f59",
+				"dweb:/ipfs/QmNb1RfPCTBGaqsyAyn6sAEnQqFa9cpfXxBK1aJCrBaBjY"
 			]
 		}
 	},
