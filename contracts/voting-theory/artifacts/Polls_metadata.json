@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.8.26+commit.8a97fa7a"
+		"version": "0.8.27+commit.40a35a09"
 	},
 	"language": "Solidity",
 	"output": {
@@ -208,7 +208,7 @@
 					"details": "A function to retrieve the votes"
 				},
 				"getTotalPolls()": {
-					"details": "A function to get totla polls"
+					"details": "A function to get total polls"
 				},
 				"vote(uint256,bytes32)": {
 					"details": "A fucntion to make the vote"
@@ -226,7 +226,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"VotingTheory/polls.sol": "Polls"
+			"contracts/voting-theory/polls.sol": "Polls"
 		},
 		"evmVersion": "cancun",
 		"libraries": {},
@@ -240,12 +240,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"VotingTheory/polls.sol": {
-			"keccak256": "0x5dee6f69ee6df69b48639474039ba9362a33b5df9c554b5a97554951a99eec25",
+		"contracts/voting-theory/polls.sol": {
+			"keccak256": "0xe51f9969e81e8e725142673600ced5358b4bb0f798cf5d25382bba0002fb023b",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://7eb1f8a544750b7eae624dea633797b57ccfd39bca565cc06566284782782f59",
-				"dweb:/ipfs/QmNb1RfPCTBGaqsyAyn6sAEnQqFa9cpfXxBK1aJCrBaBjY"
+				"bzz-raw://e30548442f25dbc945bc017691cc4a4ba43ef65b0a917cd4a1b0073591bbd280",
+				"dweb:/ipfs/QmbJhC1YE1DmcbdGS4rb6j6Rm4NC8i3S5DhQ9dTtM9EF1A"
 			]
 		}
 	},

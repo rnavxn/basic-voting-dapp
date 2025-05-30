@@ -89,7 +89,7 @@ contract Polls {
         return (poll.options, counts, poll.endTime > block.timestamp);
     }
 
-    /// @dev A function to get totla polls
+    /// @dev A function to get total polls
     function getTotalPolls() external view returns (uint256) {
         return polls.length;
     }
